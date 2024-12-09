@@ -1,0 +1,11 @@
+def tempcontrol(temp, desiredtemp):
+    
+    difference = temp - desiredtemp
+    if difference > 0:
+        newtemp = temp - .25*abs(difference)
+    elif difference < 0:
+        newtemp = temp + .25*abs(difference)
+    else:
+        newtemp = temp
+    print("Changing temperature by", newtemp-temp, "degrees")
+    return newtemp
