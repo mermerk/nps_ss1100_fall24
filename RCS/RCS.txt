@@ -1,0 +1,33 @@
+def RCSfault(mflowratex, exhaustvelx, mflowratey, exhaustvely, mflowratez, exhaustvelz):
+
+    THRUST_X = mflowratex*exhaustvelx
+    THRUST_Y= mflowratey*exhaustvely
+    THRUST_Z = mflowratez*exhaustvelz
+    
+    if THRUST_X > 100:
+        print("Thruster 1 malfunctioning! Thrust is", THRUST_X-100, "Newtons greater than limit!")
+    if THRUST_Y > 100:
+        print("Thruster 2 malfunctioning! Thrust is", THRUST_Y-100, "Newtons greater than limit!")
+    if THRUST_Z > 100:
+        print("Thruster 3 malfunctioning! Thrust is", THRUST_X-100, "Newtons greater than limit!")
+    if mflowratex > .05:
+        print("Thruster 1 malfunctioning! Mass flow rate is", mflowratex-.05, "kg/s greater than limit!")
+    if mflowratey > .05:
+        print("Thruster 2 malfunctioning! Mass flow rate is", mflowratey-.05, "kg/s greater than limit!")
+    if mflowratez > .05:
+        print("Thruster 3 malfunctioning! Mass flow rate is", mflowratez-.05, "kg/s greater than limit!")
+    if exhaustvelx > 2000:
+        print("Thruster 1 malfunctioning! Exhaust velocity is", exhaustvelx-2000, "m/s greater than limit!")
+    if exhaustvely > 2000:
+        print("Thruster 2 malfunctioning! Exhaust velocity is", exhaustvely-2000, "m/s greater than limit!")
+    if exhaustvelz > 2000:
+        print("Thruster 3 malfunctioning! Exhaust velocity is", exhaustvelz-2000, "m/s greater than limit!")
+        
+    return 
+
+def deltaV(mflowrate, exhaustvel, deltaT):
+    
+    thrust = mflowrate*exhaustvel
+    deltaV = thrust*deltaT/500
+    
+    return deltaV
