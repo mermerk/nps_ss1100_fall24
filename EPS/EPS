@@ -1,0 +1,34 @@
+function P = Available_Power(Current,Voltage)
+    %This function calculates power from solar panels
+    %UNITS: Available_Power(Watts), Current(Amperes), Voltage(Volts)
+    Max_Voltage=28;
+    Max_Current=10;
+    Max_PowerOut=280;
+    if Current <= 10
+        P=Current*Voltage;
+    else
+        disp("Current Exceedence Detected from Solar Panels")
+        P=10*Voltage;
+    end
+    if Voltage > 28
+        disp("Over-Voltage Detected from Solar Panels")
+        P=Current*28;
+    end
+end
+
+function E = Battery_Charging(P,Time_Elapsed)
+    %This function calculates energy produced for battery charging
+    %UNITS: Battery_Charging(Joules), P(Watts), Time_Elapsed(Seconds)
+    E = P * Time_Elapsed;
+end
+
+%EVALUATION
+%1
+P=Available_Power(10,25)
+E=Battery_Charging(P,3600)
+%2
+P=Available_Power(8,30)
+E=Battery_Charging(P,1800)
+%3
+P=Available_Power(12,15)
+E=Battery_Charging(P,7200)
