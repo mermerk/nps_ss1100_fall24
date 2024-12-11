@@ -1,0 +1,65 @@
+% The EPS code was modified using recommendations from ChatGPT using the
+% prompt "instead of taking a single set of inputs (current, voltage), I
+% want the function to sum a series of inputs"
+function Total_Energy = Calculate_Total_Energy(inputs)
+    Total_Energy = 0;
+
+    for i = 1:size(inputs, 1)
+        Voltage = inputs(i, 1);
+        Current = inputs(i, 2);
+        Time_Elapsed = inputs(i, 3);
+        
+        P = Available_Power(Current, Voltage);
+        E = Battery_Charging(P, Time_Elapsed);
+        Total_Energy = Total_Energy + E;
+    end
+end
+
+function P = Available_Power(Current,Voltage)
+    %This function calculates power from solar panels
+    %UNITS: Available_Power(Watts), Current(Amperes), Voltage(Volts)
+    Max_Voltage=28;
+    Max_Current=10;
+    Max_PowerOut=280;
+    
+    if Current == 0
+        disp("No Current Detected from Solar Panels")
+    end
+    if Voltage == 0
+         disp("No Voltage Detected from Solar Panels")
+    end
+
+    if Current <= 10
+        P=Current*Voltage;
+    else
+        disp("Current Exceedence Detected from Solar Panels")
+        P=10*Voltage;
+    end
+    if Voltage > 28
+        disp("Over-Voltage Detected from Solar Panels")
+        P=Current*28;
+    end
+end
+
+function E = Battery_Charging(P,Time_Elapsed)
+    %This function calculates energy produced available for battery charging
+    %UNITS: Battery_Charging(Joules), P(Watts), Time_Elapsed(Seconds)
+    E = P * Time_Elapsed;
+end
+
+%EVALUATION
+% The conversion from a list of tuples to the appropriate matrix syntax for MATLAB was made a using recommendations from ChatGPT using the
+% prompt "can MATLAB automatically change the "()" to "[]"?"
+
+% ensure data (list of tuples) in inserted as a string, i.e. ' '.
+data = '[(0,7,300), (30,10,60), (28,10,200), (10,10,10)]';
+
+data = strrep(data, '[', '');  % Remove opening square bracket
+data = strrep(data, ']', '');  % Remove closing square bracket
+data = strrep(data, '(', '[');  % Replace '(' with '['
+data = strrep(data, ')', ']');  % Replace ')' with ']'
+data = strrep(data, ', ', '; ');  % Replace commas with semicolons to separate rows
+data = ['[' data ']'];  % Adds required [] for MATLAB Matrix syntax
+inputs = str2num(data); % Converts string to Matrix
+
+Total_Energy = Calculate_Total_Energy(inputs)
