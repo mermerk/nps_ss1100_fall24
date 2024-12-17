@@ -23,7 +23,7 @@ def RCSfault(mflowratex, exhaustvelx, mflowratey, exhaustvely, mflowratez, exhau
     if exhaustvelz > 2000:
         print("Thruster 3 malfunctioning! Exhaust velocity is", exhaustvelz-2000, "m/s greater than limit!")
         
-    return 
+    return
 
 def deltaV(mflowrate, exhaustvel, deltaT):
     
@@ -31,3 +31,5 @@ def deltaV(mflowrate, exhaustvel, deltaT):
     deltaV = thrust*deltaT/500
     
     return deltaV
+    
+deltaV(.02,1000,5)
