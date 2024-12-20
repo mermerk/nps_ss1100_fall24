@@ -31,15 +31,16 @@ We divided up the various sections and then met in person twice to bounce ideas 
 
 2. What was the most challenging section, and why? Feel free to provide more than one response
 if there is a difference of opinion in the group. Remote Sensing.  It used file import, matrix operations, no value "error handling", and multiple library-specific functions.
+Command Parsing was also complicated based on the syntax needed to align the inputs (also ensuring the correct input format was used) with the values embedded in the dictionary. 
 
-3. If you employed Generative AI tools, how did you do so? Discuss which tools you used, the
+4. If you employed Generative AI tools, how did you do so? Discuss which tools you used, the
 prompts you utilized, how you ensured the results were valid, and how you integrated the code
 into your tasks.
-ChatGPT was a helpful tool to verify generated was sound.  Also, using prompts like "how could I improve this line of code?".  It is also a very efficient way to learn new information, like "explain what a -1 stack axis means".  It is often much faster than googling it and pouring over the 'forums' for a useful explanation.  The same can be said for generating code as well, "how do I display the data containing in [x,y,z] as an image?"
+ChatGPT was a helpful tool to verify the code generated was sound.  Also, using prompts like "how could I improve this line of code?".  It is also a very efficient way to learn new information, like "explain what a -1 stack axis means".  It is often much faster than googling it and pouring over the 'forums' for a useful explanation.  The same can be said for generating code as well, "how do I display the data containing in [x,y,z] as an image?"
 
-4. What other resources did you use to find solutions? Online sites, books, references, etc.
+5. What other resources did you use to find solutions? Online sites, books, references, etc.
 
-5. In what way could this project be improved for future quarters?
+6. In what way could this project be improved for future quarters?
 Use github from the beginning of the course with the assigned labs in order to increase familiarization and ease of use. We ran into a few technical problems, trying to understand how github was structured. Having exposure to this earlier would be helpful, and would make collaboration with the other labs easier. 
 
 
