@@ -151,5 +151,6 @@ def parse_command(input_string):
 
     # Return the tuple: (subsystem full name, command description, parameter value)
     return (subsystem_full_name, command_description, param_value)
+    result = parse_command(input_string)
     print(f"Parsed Result: {result}")
 
