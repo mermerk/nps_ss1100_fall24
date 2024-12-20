@@ -84,7 +84,7 @@ command_dict = {
         }
     }
 }
-#### function created to align string value to dictionary to instead of using built in function re 
+#### function created to align string value to dictionary instead of using built in function re 
 def parse_command(input_string):
   
 ## I was having constant error messages not realizing that in my original input line, I included a space before the subsystem
